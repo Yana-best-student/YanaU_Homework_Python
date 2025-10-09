@@ -21,3 +21,4 @@ else:
     feedback = input("Расскажите, за что похвалить оператора: ")   
 
 print(feedback)    
+
