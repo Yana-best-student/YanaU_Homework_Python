@@ -155,8 +155,8 @@
 
 # DOMASHKA
 
-list = list(range(18, 0, -4))
-print(list)
+# list = list(range(18, 0, -4))
+# print(list)
 
 # Задание 8
 
