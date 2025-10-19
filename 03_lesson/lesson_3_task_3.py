@@ -4,9 +4,9 @@ from mailing import Mailing
 to_address = Address("445025", "Санкт-Петербург", "Пушкина", "55", "7")
 from_address = Address("617400", "Москва", "Ленина", "10", "75")
 
-mailing = Mailing("TRK476990", from_address, to_address, "150")
+mailing = Mailing("TRK476990", from_address, to_address, 150)
 print(
-    f"Отправление номер: {mailing.trak} из "
+    f"Отправление номер: {mailing.track} из "
     f"{mailing.from_address.postal_code}, "
     f"{mailing.from_address.city}, {mailing.from_address.street}"
     f" {mailing.from_address.house} - {mailing.from_address.apartment} в "
