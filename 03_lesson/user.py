@@ -10,8 +10,4 @@ class User:
         print(self.last_name)
 
     def get_first_last_info(self):
-        print(f"First_name: {self.first_name}, Last_name: {self.last_name}")    
-
-
-
-        
+        print(f"First_name: {self.first_name}, Last_name: {self.last_name}")
