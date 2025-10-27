@@ -7,4 +7,3 @@ class StringProcessor:
         if not processed_text.endswith("."):
             processed_text += "."
         return processed_text
-    
