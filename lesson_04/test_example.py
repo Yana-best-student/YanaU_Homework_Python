@@ -2,7 +2,7 @@
 #     assert 1 + 1 == 2
 
 import pytest
-from string_processor import StringProcessor
+from lesson_04.string_processor import StringProcessor
 
 
 @pytest.mark.parametrize("input_text, expected_output", [
