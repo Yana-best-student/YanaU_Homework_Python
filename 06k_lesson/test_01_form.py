@@ -18,7 +18,7 @@ def test_data_types():
     driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
 
     driver.implicitly_wait(10)
-    
+
     first_name = driver.find_element(By.CSS_SELECTOR, "[name='first-name']")
     first_name.send_keys("Иван")
 
