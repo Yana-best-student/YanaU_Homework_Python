@@ -34,7 +34,6 @@ def test_calc_types():
 
     button_equals = driver.find_element(By.XPATH, "//span[text()='=']").click()
 
-    
     result = WebDriverWait(driver, 45).until(
         EC.text_to_be_present_in_element((By.CSS_SELECTOR, 'div.screen'), '15'))
     result = driver.find_element(By.CSS_SELECTOR, 'div.screen').text

@@ -85,7 +85,8 @@ def test_shop_types():
         By.CSS_SELECTOR, '[data-test="total-label"]')
     total_price = sum.text
     assert total_price == 'Total: $58.29'
-    
+
     driver.close()
-    
+
+
 driver.quit()
