@@ -6,16 +6,20 @@ from selenium import webdriver
 from selenium.webdriver.edge.service import Service as EdgeService
 
 service = EdgeService(
-    executable_path='C:/Users/yan16/Downloads/edgedriver_win64/msedgedriver.exe')
+    executable_path='C:/Users/yan16/Downloads/edgedriver_win64/msedgedriver.exe'
+)
 driver = webdriver.Edge(service=service)
 
 
 def test_data_types():
     service = EdgeService(
-        executable_path='C:/Users/yan16/Downloads/edgedriver_win64/msedgedriver.exe')
+        executable_path='C:/Users/yan16/Downloads/edgedriver_win64/msedgedriver.exe'
+    )
     driver = webdriver.Edge(service=service)
 
-    driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
+    driver.get(
+        "https://bonigarcia.dev/selenium-webdriver-java/data-types.html"
+    )
 
     driver.implicitly_wait(10)
 
@@ -47,11 +51,11 @@ def test_data_types():
     company = driver.find_element(By.CSS_SELECTOR, "[name='company']")
     company.send_keys("QA")
 
-    last = WebDriverWait(driver, 40).until(
+    WebDriverWait(driver, 40).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "[name='company']"))
     )
 
-    button = driver.find_element(
+    driver.find_element(
         By.CSS_SELECTOR, "button.btn.btn-outline-primary.mt-3")
 
     WebDriverWait(driver, 40).until(EC.element_to_be_clickable(
@@ -67,7 +71,9 @@ def test_data_types():
 
     for field in fields:
         color = driver.find_element(
-            By.XPATH, "//div[contains(@class, 'alert py-2 alert-success')]").value_of_css_property("background-color")
+            By.XPATH,
+            "//div[contains(@class, 'alert py-2 alert-success')]"
+        ).value_of_css_property("background-color")
     assert color == 'rgba(209, 231, 221, 1)'
 
 
