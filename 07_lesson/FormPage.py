@@ -1,5 +1,4 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -46,8 +45,9 @@ class PageObject:
         return "alert-danger" in self.get_field_class("zip-code")
 
     def check_fields_success(self):
-        fields = ["first-name", "last-name", "address", "e-mail", "phone", "city",
-                  "country",  "job-position", "company"]
+        fields = ["first-name", "last-name", "address", "e-mail",
+                  "phone", "city", "country",  "job-position", "company"
+                  ]
         for field in fields:
             if "success" not in self.get_field_class(field):
                 return False
