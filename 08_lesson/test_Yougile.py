@@ -1,12 +1,15 @@
 import pytest
 import requests
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
-baseUrl = "https://ru.yougile.com/api-v2/"
-login = 'yan16752009@yandex.ru'
-PASSWORD = 'Yana05111982$'
-token = 'bCtWjqnwV8GDiPf43Fglk4dQeXRVUu5DpxjsD9cXW7jg5w4fVSKOme6f95YdOcto'
+token = os.getenv("API_TOKEN")
+login = os.getenv("LOGIN")
+password = os.getenv("PASSWORD")
 HEADERS = {"Authorization": f"Bearer {token}"}
+baseUrl = "https://ru.yougile.com/api-v2/"
 
 
 @pytest.fixture
@@ -30,7 +33,7 @@ def create_and_delete_project():
 def company_ID():
     bodyID = {
         'login': login,
-        'password': PASSWORD
+        'password': password
     }
     company_ID = requests.post(f"{baseUrl}auth/companies", json=bodyID)
     assert company_ID.status_code == 200, company_ID.text
@@ -48,7 +51,7 @@ def company_ID():
 def test_company_ID():
     bodyID = {
         'login': login,
-        'password': PASSWORD
+        'password': password
     }
     company_ID = requests.post(f"{baseUrl}auth/companies", json=bodyID)
     assert company_ID.status_code == 200, company_ID.text
@@ -64,7 +67,7 @@ def test_key_token(company_ID):
 
     creds = {
         'login': login,
-        'password': PASSWORD,
+        'password': password,
         'companyId': company_id
     }
     key = requests.post(f"{baseUrl}auth/keys", json=creds)
