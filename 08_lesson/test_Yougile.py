@@ -105,7 +105,7 @@ def test_create_project_neg():
 
 def test_change_project_positive(create_and_delete_project):
     project_id = create_and_delete_project
-    new_title = {"title": "Python8"}
+    new_title = {"title": "Создание и изменение"}
     new = requests.put(f"{baseUrl}projects/{project_id}",
                        json=new_title,
                        headers=HEADERS)
