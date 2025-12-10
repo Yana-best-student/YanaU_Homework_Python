@@ -79,6 +79,24 @@ def test_key_token(company_ID):
 
     assert isinstance('key', str)
 
+def test_get_key_all(company_ID):
+    company_id = company_ID
+    creds = {
+        'login': login,
+        'password': password,
+        'companyId': company_id
+    }
+    key_all = requests.post(f"{baseUrl}auth/keys/get", json=creds)
+    assert key_all.status_code == 200, key_all.text
+    print(key_all.text)
+
+    response_json = key_all.json()
+    keys = [item['key'] for item in response_json]
+    for key in keys:
+        print(key)
+
+
+
 
 # Создание нового проекта
 
@@ -135,7 +153,7 @@ def test_change_project_neg(create_and_delete_project):
 def test_get_id_positive(create_and_delete_project):
     progect_id = create_and_delete_project
     title = {"title": "Python8"}
-    id_posit = requests.get(f"{baseUrl}projects/{progect_id}", json=title,
+    id_posit = requests.get(f"{baseUrl}projects/{progect_id}",
                             headers=HEADERS)
     assert id_posit.status_code == 200, id_posit.text
     id_posit = id_posit.json()
@@ -144,8 +162,7 @@ def test_get_id_positive(create_and_delete_project):
 def test_get_id_negative(create_and_delete_project):
     project_id = create_and_delete_project
     title = {"title": "Python8"}
-    neg_id = requests.put(f"{baseUrl}projects/{project_id}+1",
-                          json=title,
+    neg_id = requests.get(f"{baseUrl}projects/invalid_id_123",
                           headers=HEADERS)
     assert neg_id.status_code == 404, neg_id.text
     new_change = neg_id.json()
