@@ -121,7 +121,6 @@ def test_delete():
     assert len(rows) == 0
 
 
-
 def test_deactivate():
     # Добавили компанию через базу:
     name = "Skypro"
@@ -144,11 +143,11 @@ def test_deactivate_and_activate_back():
     description = "descr"
     db.create(name, description)
     max_id = db.get_max_id()
-   
+
     # Деактивируем компанию с помощью параметра False
     api.set_active_state(max_id, False)
     # Активируем компанию с помощью параметра True
     body = api.set_active_state(max_id, True)
     deleted = api.delete_company(max_id)
-    # Проверяем, что компания активная    
-    assert body["is_active"] is True  
+    # Проверяем, что компания активная
+    assert body["is_active"] is True

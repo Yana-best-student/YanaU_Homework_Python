@@ -2,7 +2,7 @@ import requests
 
 
 class CompanyApi:
-  
+
     # инициализация
     def __init__(self, url):
         self.url = url
@@ -60,5 +60,3 @@ class CompanyApi:
         url_with_token = f"{self.url}/company/status_update/{id}?client_token={client_token}"
         resp = requests.patch(url_with_token, json={"is_active": is_active})
         return resp.json()
-
-    
