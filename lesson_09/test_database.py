@@ -8,7 +8,7 @@ db = create_engine(db_connection_string)
 
 def test_db_connection():
     names = db.table_names()
-    assert names[1] == 'company'
+    assert names[3] == 'company'
 
 
 def test_select():
