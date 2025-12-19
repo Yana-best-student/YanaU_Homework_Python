@@ -48,11 +48,11 @@ def test_insert():
 
 def test_update():
     sql = text("UPDATE company SET description = :descr WHERE id = :id")
-    db.execute(sql, descr = 'New descr', id = 32)
-    
-#DELETE FROM company WHERE id = 30 удаление компании
+    db.execute(sql, descr='New descr', id=32)
+
+# DELETE FROM company WHERE id = 30 удаление компании
+
 
 def test_delete():
     sql = text("DELETE FROM company WHERE id = :id")
-    db.execute(sql, id = 32)
-    
+    db.execute(sql, id=32)
