@@ -10,7 +10,5 @@ driver = webdriver.Chrome(service=ChromeService(
 driver.get("http://uitestingplayground.com/classattr")
 blue_button = driver.find_element(
     By.XPATH, "//button[contains(concat(' ', normalize-space(@class), ' '), ' btn-primary ')]").click()
-sleep(5)
-driver.quit()
 
-sleep(5)
+driver.quit()

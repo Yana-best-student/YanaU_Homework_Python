@@ -10,17 +10,11 @@ driver = webdriver.Firefox(
 driver.get("http://the-internet.herokuapp.com/login")
 
 username_input = driver.find_element(By.CSS_SELECTOR, "#username")
-sleep(2)
 username_input.send_keys("tomsmith")
-sleep(2)
 password_input = driver.find_element(By.CSS_SELECTOR, "#password")
-sleep(2)
 password_input.send_keys("SuperSecretPassword!")
-sleep(2)
 login_button = driver.find_element(
     By.XPATH, "//button[@class='radius']").click()
-sleep(5)
 message = driver.find_element(By.ID, "flash").text
 print(message.split("\n")[0].strip())
-
 driver.quit()
