@@ -2,7 +2,7 @@ import pytest
 from sqlalchemy import create_engine, text
 from sqlalchemy import inspect
 
-db_connection_string = "postgresql://postgres:0511@localhost/QA"
+db_connection_string = "postgresql://postgres:****@localhost/QA"
 db = create_engine(db_connection_string)
 
 

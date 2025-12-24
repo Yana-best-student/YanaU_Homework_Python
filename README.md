@@ -6,3 +6,4 @@ API_TOKEN="bCtWjqnwV8GDiPf43Fglk4dQeXRVUu5DpxjsD9cXW7jg5w4fVSKOme6f95YdOcto"
 PASSWORD="Yana05111982$"
 LOGIN="yan16752009@yandex.ru"
 эти переменные нужны для работы тестов, чтобы они могли корректно авторизоваться и выполнять запросы.
+09_lesson вместо \*\*\*\* в строке подключения к базе данных ввести 0511
