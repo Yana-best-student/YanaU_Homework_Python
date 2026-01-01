@@ -10,13 +10,15 @@ driver = webdriver.Firefox(
 driver.get("http://the-internet.herokuapp.com/inputs")
 
 number_input = driver.find_element(By.CSS_SELECTOR, "input[type='number']")
-sleep(5)
+
 number_input.send_keys("Sky")
-sleep(5)
+
 number_input.clear()
-sleep(5)
+
 number_input = driver.find_element(By.CSS_SELECTOR, "input[type='number']")
-sleep(5)
+
 number_input.send_keys("Pro")
-sleep(5)
+
+driver.close()
+
 driver.quit()

@@ -20,5 +20,6 @@ content = WebDriverWait(driver, 20).until(
     EC.visibility_of_element_located((By.CSS_SELECTOR, "#updatingButton"))
 )
 print(content.text)
+driver.close()
 
 driver.quit()

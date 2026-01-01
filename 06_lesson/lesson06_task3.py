@@ -20,5 +20,6 @@ img_award = WebDriverWait(driver, 20).until(
 )
 src_value = img_award.get_attribute("src")
 print(src_value)
+driver.close()
 
 driver.quit()

@@ -1,0 +1,1 @@
+b'SELECT MAX("id") FROM company WHERE deleted_at IS NULL'

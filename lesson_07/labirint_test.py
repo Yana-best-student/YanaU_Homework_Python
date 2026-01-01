@@ -26,7 +26,7 @@ def test_cart_counter():
 
 # найти все книги по слову Python
     browser.find_element(By.CSS_SELECTOR, "#search-field").send_keys("Python")
-    browser.find_element(By.CSS_SELECTOR, "button[type=submit]").click()
+    elem = browser.find_element(By.CSS_SELECTOR, "button[type=submit]").click()
 
 
 # добавить все книги в корзину и посчитать количество
@@ -45,5 +45,6 @@ def test_cart_counter():
 
     # сравнить с counter
     assert counter == int(txt.split()[0])
+    
 
     browser.quit()

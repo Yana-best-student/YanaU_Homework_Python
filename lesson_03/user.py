@@ -1,24 +1,36 @@
-# class User:
-# 	age = 0;
+from card import Card 
 
-# 	def __init__(self, name):
-# 		print("я создался")
-# 		self.username = name
 
-# 	def sayName(self):
-# 		print("меня зовут ", self.username)
+class User:
+	"""
+	Этот класс представляет сущность пользователь,
+	У пользователя есть имя и возраст
+	"""
+	age = 0
 
-# 	def sayAge(self):
-# 		print(self.age) 
+	def __init__(self, name: str):
+		print("я создался")
+		self.username = name
 
-# 	def setAge(self, newAge):
-# 		self.age = newAge
+	def sayName(self) -> None:
+		"""Печатает имя пользователя"""
+		print("меня зовут ", self.username)
 
-# 	def addCard(self, card):
-# 		self.card = card 
+	def sayAge(self) -> None:
+		"""Печатает возраст пользователя"""
+		print(self.age) 
+
+	def setAge(self, newAge: int)-> None:
+		"""Устанавливает возраст пользователя"""
+		self.age = newAge
+
+	def addCard(self, card: Card) -> None:
+		"""добавляет пользователю карту"""
+		self.card = card 
 	
-# 	def getCard(self):
-# 		return self.card
+	def getCard(self) -> Card:
+		"""возвращает пользователю карту"""
+		return self.card
 
 
 

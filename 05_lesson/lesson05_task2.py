@@ -8,10 +8,11 @@ driver = webdriver.Chrome(service=ChromeService(
     ChromeDriverManager().install()))
 
 driver.get("http://uitestingplayground.com/dynamicid")
-sleep(5)
+
 dinamic_button = driver.find_element(
     By.XPATH, "//button[contains(@class, 'btn-primary')]").click()
-sleep(5)
+driver.close()
+
+
 driver.quit()
 
-sleep(5)
